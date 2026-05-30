@@ -1,6 +1,14 @@
 {
   "sandbox": {
-    "enabled": true
+    "enabled": true,
+    "filesystem": {
+      "allowWrite": [
+        "~/fvm",
+        "~/.pub-cache",
+        "~/.dart",
+        "/tmp"
+      ]
+    }
   },
   "hooks": {
     "PostToolUse": [
