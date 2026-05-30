@@ -6,7 +6,7 @@ import '../features/splash/splash_screen.dart';
 
 part 'router.g.dart';
 
-@riverpod
+@Riverpod(keepAlive: true)
 GoRouter router(Ref ref) {
   return GoRouter(
     initialLocation: '/splash',
