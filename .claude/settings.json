@@ -1,6 +1,11 @@
 {
   "sandbox": {
     "enabled": true,
+    "excludedCommands": [
+      "flutter",
+      "fvm",
+      "dart"
+    ],
     "filesystem": {
       "allowWrite": [
         "~/fvm",
