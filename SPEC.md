@@ -22,8 +22,8 @@ go_router でルーティング、Riverpod で状態管理を行う最小構成�
 
 | ツール | バージョン |
 |---|---|
-| Flutter | >= 3.24.0 (stable) |
-| Dart | >= 3.5.0 |
+| Flutter | >= 3.22.0 (stable) |
+| Dart | >= 3.7.0 |
 | flutter_riverpod | ^2.6.1 |
 | riverpod_annotation | ^2.3.5 |
 | go_router | ^14.6.2 |
@@ -129,7 +129,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'router.g.dart';
 
-@riverpod
+@Riverpod(keepAlive: true)
 GoRouter router(Ref ref) {
   return GoRouter(
     initialLocation: '/splash',
@@ -166,6 +166,8 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
+    // ref.watch keeps the AutoDispose provider alive during the 3-second wait
+    ref.watch(splashNotifierProvider);
     return const Scaffold(
       body: Center(
         child: Column(

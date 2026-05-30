@@ -24,6 +24,9 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
+    // ref.watch keeps splashNotifierProvider alive during the 3-second wait,
+    // preventing AutoDispose from disposing it before state = true is set.
+    ref.watch(splashNotifierProvider);
     return const Scaffold(
       body: Center(
         child: Column(
