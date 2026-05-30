@@ -44,7 +44,7 @@
 - [x] `test/router/router_test.dart` を作成・実行
 - [x] `flutter test` で全件パスを確認
 - [x] `flutter analyze` でエラーゼロを確認
-- [ ] `flutter run` で Splash → Home 遷移を目視確認（Task 4 で実施）
+- [x] `flutter run` で Splash → Home 遷移を目視確認
 
 **✅ チェックポイント C:** 全テスト PASS + 実機動作確認済み
 
