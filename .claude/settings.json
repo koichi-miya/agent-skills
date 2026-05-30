@@ -1,0 +1,19 @@
+{
+  "sandbox": {
+    "enabled": true
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r '.tool_input.file_path // empty' | grep -q 'SPEC\\.md$' && echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PostToolUse\",\"additionalContext\":\"SPEC.md が更新されました。全文を通読してセクション間の矛盾（数値・条件・ユーザーストーリーと成功基準のズレなど）がないか確認し、矛盾があれば修正してください。\"}}' || true",
+            "statusMessage": "SPEC.md の一貫性チェック中..."
+          }
+        ]
+      }
+    ]
+  }
+}
